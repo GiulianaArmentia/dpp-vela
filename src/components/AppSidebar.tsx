@@ -22,7 +22,7 @@ export default function AppSidebar() {
       <nav className="flex-1 px-3 py-2">
         <div className="space-y-1 mt-4">
           <Link
-            href="/dashboard/"
+            href="/"
             className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
               isDashboard
                 ? 'bg-bg-card text-text-primary border border-border'
