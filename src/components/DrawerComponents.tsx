@@ -266,8 +266,8 @@ export function DrawerSourceDocs({
           <div className="col-span-2 flex flex-wrap items-center justify-start sm:justify-end gap-2">
             {/* Vigente => Eliminar */}
             {isVigente(doc.status) && onDelete && (
-              <button onClick={() => onDelete(doc.id)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-red-400/10 border border-red-400/30 text-red-400 hover:bg-red-400/20 hover:border-red-400/50 transition-colors" title="Eliminar">
-                <FaTrash size={12} /> Eliminar
+              <button onClick={() => onDelete(doc.id)} className={iconBtn} title="Eliminar">
+                <FaTrash size={13} />
               </button>
             )}
 
@@ -275,13 +275,13 @@ export function DrawerSourceDocs({
             {isPorVencer(doc.status) && (
               <>
                 {onReplace && (
-                  <button onClick={() => onReplace(doc.id)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-accent-violet/10 border border-accent-violet/30 text-accent-violet hover:bg-accent-violet/20 hover:border-accent-violet/50 transition-colors" title="Reemplazar">
-                    <FaSync size={12} /> Reemplazar
+                  <button onClick={() => onReplace(doc.id)} className={iconBtn} title="Reemplazar">
+                    <FaSync size={13} />
                   </button>
                 )}
                 {onRequest && (
-                  <button onClick={() => onRequest(doc.id)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-bg-inner/50 border border-border text-text-secondary hover:bg-bg-inner hover:text-text-primary transition-colors" title="Solicitar">
-                    <FaPaperPlane size={12} /> Solicitar
+                  <button onClick={() => onRequest(doc.id)} className={iconBtn} title="Solicitar">
+                    <FaPaperPlane size={13} />
                   </button>
                 )}
               </>
@@ -291,13 +291,13 @@ export function DrawerSourceDocs({
             {isPendiente(doc.status) && (
               <>
                 {onUploadFile && (
-                  <button onClick={() => onUploadFile(doc.id)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-accent-violet/10 border border-accent-violet/30 text-accent-violet hover:bg-accent-violet/20 hover:border-accent-violet/50 transition-colors" title="Cargar">
-                    <FaUpload size={12} /> Cargar
+                  <button onClick={() => onUploadFile(doc.id)} className={iconBtn} title="Cargar">
+                    <FaUpload size={13} />
                   </button>
                 )}
                 {onRequest && (
-                  <button onClick={() => onRequest(doc.id)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-bg-inner/50 border border-border text-text-secondary hover:bg-bg-inner hover:text-text-primary transition-colors" title="Solicitar">
-                    <FaPaperPlane size={12} /> Solicitar
+                  <button onClick={() => onRequest(doc.id)} className={iconBtn} title="Solicitar">
+                    <FaPaperPlane size={13} />
                   </button>
                 )}
               </>
