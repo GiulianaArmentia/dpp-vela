@@ -30,6 +30,7 @@ export default function DppPage() {
   const { theme, toggleTheme } = useTheme();
   const { openDrawer } = useDrawer();
   const [showLang, setShowLang] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const tabs = [
     { key: 'resumen', label: t('tabs.summary') },
@@ -45,13 +46,22 @@ export default function DppPage() {
 
   return (
     <div className="min-h-screen bg-bg-page text-text-primary flex">
-      <AppSidebar />
+      <AppSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main Content */}
-      <main className="flex-1 ml-[260px]">
+      <main className="flex-1 ml-0 lg:ml-[260px]">
         {/* Top Bar */}
-        <header className="relative flex items-center h-16 border-b border-border px-8 bg-bg-page">
-          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-[720px]">
+        <header className="relative flex items-center h-16 border-b border-border px-4 sm:px-8 bg-bg-page">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="lg:hidden w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-border-inner transition-colors mr-3 shrink-0"
+            aria-label="Abrir menú"
+          >
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1H17M1 7H17M1 13H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-[720px] hidden sm:block">
             <div className="relative">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
               <input
@@ -105,7 +115,7 @@ export default function DppPage() {
         </header>
 
         {/* Content Area */}
-        <div className="bg-bg-page min-h-[calc(100vh-64px)] p-6 pl-12">
+        <div className="bg-bg-page min-h-[calc(100vh-64px)] p-4 sm:p-6 lg:pl-12">
           {/* Volver */}
           <div className="mb-4">
             <Link

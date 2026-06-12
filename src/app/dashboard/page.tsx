@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import {
   FaSearch, FaBell, FaSun, FaMoon, FaGlobe, FaRegClock, FaChartLine, FaThLarge,
   FaChevronRight, FaClipboardCheck,
@@ -88,6 +88,7 @@ export default function DashboardPage() {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const [showLang, setShowLang] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const isEs = i18n.language === 'es';
 
@@ -111,13 +112,22 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-bg-page text-text-primary flex">
-      <AppSidebar />
+      <AppSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main Content */}
-      <main className="flex-1 ml-[260px]">
+      <main className="flex-1 ml-0 lg:ml-[260px]">
         {/* Top Bar */}
-        <header className="relative flex items-center h-16 border-b border-border px-8 bg-bg-page">
-          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-[720px]">
+        <header className="relative flex items-center h-16 border-b border-border px-4 sm:px-8 bg-bg-page">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="lg:hidden w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-border-inner transition-colors mr-3 shrink-0"
+            aria-label="Abrir menú"
+          >
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1H17M1 7H17M1 13H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-[720px] hidden sm:block">
             <div className="relative">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
               <input
@@ -170,9 +180,9 @@ export default function DashboardPage() {
         </header>
 
         {/* Content */}
-        <div className="px-12 py-8">
+        <div className="px-4 sm:px-8 lg:px-12 py-4 sm:py-8">
           {/* Title Row */}
-          <div className="flex items-start justify-between mb-8">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-8">
             <div>
               <h1 className="text-2xl font-bold text-text-primary tracking-tight">{t('dashboard.title') || 'Gestión de DPPs'}</h1>
               <p className="text-sm text-text-secondary mt-1">{t('dashboard.subtitle') || 'Gestiona, resuelve y prepara el cumplimiento de tus productos en un solo lugar'}</p>
