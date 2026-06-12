@@ -1,2 +1,2 @@
-:HL["/dpp-vela/_next/static/chunks/1ai7cct16-kqz.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"KbOsOVbuYfl9kNamMCvPz"}
+:HL["/dpp-vela/_next/static/chunks/3r1uhr2zc0bld.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"l6ojm0n5cGYdq4zH7W7a2"}
