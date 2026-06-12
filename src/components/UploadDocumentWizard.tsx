@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { FaUpload, FaFileAlt, FaTimes, FaChevronRight, FaCheckCircle, FaExclamationTriangle, FaTrash, FaFilePdf } from 'react-icons/fa';
 
@@ -232,7 +233,7 @@ export function UploadDocumentWizard({ isOpen, onClose, onSave, mode = 'create',
     return t('wizard.subtitle');
   })();
 
-  return (
+  const wizardBody = (
     <div className="fixed inset-0 z-[1100] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
@@ -516,4 +517,6 @@ export function UploadDocumentWizard({ isOpen, onClose, onSave, mode = 'create',
       </div>
     </div>
   );
+
+  return createPortal(wizardBody, document.body);
 }
