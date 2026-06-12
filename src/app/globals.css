@@ -9,10 +9,10 @@
   --color-primary-light: #34D399;
 
   --color-bg-page: #000000;
-  --color-bg-card: #0a0f0d;
-  --color-bg-inner: #27272A;
+  --color-bg-card: #0a0a0a;
+  --color-bg-inner: #262626;
   --color-border: rgba(255, 255, 255, 0.10);
-  --color-border-inner: #3F3F46;
+  --color-border-inner: #404040;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: rgba(255, 255, 255, 0.60);
   --color-text-muted: rgba(255, 255, 255, 0.55);
