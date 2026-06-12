@@ -61,7 +61,7 @@ export function ProductoDrawer() {
   const [sourceDocs, setSourceDocs] = useState<SourceDoc[]>([
     { id: 'sd1', name: 'Registro operador económico.pdf', type: 'Legal', status: 'active', origin: 'file', fileName: 'registro_operador.pdf', uploadDate: '2026-01-15', linkedSections: ['producto'], source: 'Interno' },
     { id: 'sd2', name: 'Evidencia de publicación', type: 'Evidencia', status: 'active', origin: 'link', url: 'https://dpp.velatextile.eu/vt-cam-001', uploadDate: '2026-04-02', linkedSections: ['producto'], source: 'Interno' },
-    { id: 'sd3', name: 'Certificado fabricante.pdf', type: 'Legal', status: 'expired', origin: 'file', fileName: 'cert_fab_2025.pdf', uploadDate: '2025-02-14', linkedSections: ['producto'], source: 'Proveedor' },
+    { id: 'sd3', name: 'Certificado fabricante.pdf', type: 'Legal', status: 'active', origin: 'file', fileName: 'cert_fab_2026.pdf', uploadDate: '2026-02-14', linkedSections: ['producto'], source: 'Proveedor' },
     { id: 'sd4', name: 'Ficha técnica', type: 'Técnica', status: 'missing', origin: 'file', fileName: '', uploadDate: '', linkedSections: ['producto'], source: 'Proveedor' },
   ]);
 
